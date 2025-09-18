@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Excalidraw } from "@excalidraw/excalidraw";
 
 type ExcalidrawViewerProps = {
   src: string;
@@ -7,6 +6,12 @@ type ExcalidrawViewerProps = {
 
 const ExcalidrawViewer: React.FC<ExcalidrawViewerProps> = ({ src }) => {
   const [data, setData] = useState<any>(null);
+  const [ExcalidrawComponent, setExcalidrawComponent] = useState<any>(null);
+
+  useEffect(() => {
+    // Import dynamique côté client seulement
+    import('@excalidraw/excalidraw').then(mod => setExcalidrawComponent(() => mod.Excalidraw));
+  }, []);
 
   useEffect(() => {
     fetch(src)
@@ -14,9 +19,13 @@ const ExcalidrawViewer: React.FC<ExcalidrawViewerProps> = ({ src }) => {
       .then(json => setData(json));
   }, [src]);
 
+  if (!ExcalidrawComponent) {
+    return <p>Chargement du composant Excalidraw...</p>;
+  }
+
   return (
-    <div>
-      {data ? ( <Excalidraw initialData={data} viewModeEnabled={true} /> ) : ( <p>Chargement du schéma...</p>)}
+    <div style={{ width: '100%', height: '600px' }}>
+      {data ? (  <ExcalidrawComponent initialData={data} viewModeEnabled /> ) : ( <p>Chargement du schéma...</p>)}
     </div>
   );
 };
