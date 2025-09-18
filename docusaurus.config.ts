@@ -143,6 +143,25 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    function roughAliasPlugin() {
+      return {
+        name: 'rough-alias-plugin',
+        configureWebpack() {
+          return {
+            resolve: {
+              alias: {
+                'roughjs/bin/rough': 'roughjs/bin/rough.js',
+                'roughjs/bin/generator': 'roughjs/bin/generator.js',
+                'roughjs/bin/math': 'roughjs/bin/math.js',
+              },
+            },
+          };
+        },
+      };
+    },
+  ],
 };
 
 export default config;
