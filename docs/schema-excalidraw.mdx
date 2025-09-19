@@ -2,8 +2,11 @@
 id: schema-excalidraw
 title: Schéma Excalidraw
 ---
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import ExcalidrawViewer from '@site/src/components/ExcalidrawViewer';
 
 # Schéma d'infrastructure d'Icooking
 
-<ExcalidrawViewer src="/excalidraw/schema.excalidraw.json" />
+<BrowserOnly fallback={<p>Chargement du schéma...</p>}>
+  {() => <ExcalidrawViewer src="/excalidraw/schema.excalidraw.json" />}
+</BrowserOnly>
