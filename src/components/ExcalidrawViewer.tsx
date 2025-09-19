@@ -1,33 +1,35 @@
 import React, { useEffect, useState } from 'react';
+import { Excalidraw } from "@excalidraw/excalidraw";
+import "@excalidraw/excalidraw/index.css";
 
-type ExcalidrawViewerProps = {
-  src: string;
+type ExcalidrawInitialData = {
+  elements?: any[];
+  appState?: Record<string, any>;
+  files?: Record<string, any>;
 };
 
-const ExcalidrawViewer: React.FC<ExcalidrawViewerProps> = ({ src }) => {
-  const [data, setData] = useState<any>(null);
-  const [ExcalidrawComponent, setExcalidrawComponent] = useState<any>(null);
-
-  useEffect(() => {
-    // Import dynamique côté client seulement
-    import('@excalidraw/excalidraw').then(mod => setExcalidrawComponent(() => mod.Excalidraw));
-  }, []);
+export default function ExcalidrawViewer({ src }: { src: string }) {
+  const [data, setData] = useState<ExcalidrawInitialData>();
 
   useEffect(() => {
     fetch(src)
-      .then(res => res.json())
-      .then(json => setData(json));
+      .then((res) => res.json())
+      .then((json) => {
+       
+        const { elements, appState, files } = json;
+        console.log("Données envoyées à Excalidraw:", data);
+        setData({ elements, appState, files });
+      })
+      .catch((err) => console.error("Erreur Excalidraw JSON:", err));
   }, [src]);
 
-  if (!ExcalidrawComponent) {
-    return <p>Chargement du composant Excalidraw...</p>;
-  }
-
   return (
-    <div style={{ width: '100%', height: '600px' }}>
-      {data ? (  <ExcalidrawComponent initialData={data} viewModeEnabled /> ) : ( <p>Chargement du schéma...</p>)}
-    </div>
+    <div style={{ height: 600, border: "1px solid #333", borderRadius: 12 }}>
+    {data ? (
+      <Excalidraw initialData={data} viewModeEnabled />
+    ) : (
+      <p>Chargement du schéma...</p>
+    )}
+  </div>
   );
-};
-
-export default ExcalidrawViewer;
+}
