@@ -77,7 +77,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'docs',
+              label: 'documentation',
               to: '/docs/intro',
             },
           ],
