@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'ICooking documentation',
-  tagline: 'Bienvenue sur la documentation du projet Icooking',
+  tagline: 'Welcome to the Icooking project documentation',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -74,10 +74,10 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'documentation',
+              label: 'overview',
               to: '/docs/intro',
             },
           ],
