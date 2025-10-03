@@ -4,29 +4,29 @@ sidebar_position: 2
 
 # Progressive Web App (PWA)
 
-### What is a PWA ?
+### Qu’est-ce qu’une PWA ?
 
-A **Progressive Web App (PWA)** is a web application that combines the benefits of a website and a native application.
-It can be installed directly from the browser, work offline, and provide a smooth experience on both mobile and desktop. 
+Une **Progressive Web App (PWA)** est une application web qui combine les avantages d’un site web et d’une application native.  
+Elle peut être installée directement depuis le navigateur, fonctionner hors-ligne, et offrir une expérience fluide sur mobile ou desktop.  
 
-## Integrating a PWA into a React application
+## Intégrer une PWA dans une application React
 
-### 1. Create a project with Vite
+### 1. Créer un projet avec Vite
 
-Example with **Vite + React** :  
+Exemple avec **Vite + React** :  
 
 ```bash
 pnpm create vite@latest my-pwa -- --template react
 cd my-pwa
 pnpm install
 ```
-### 2. Install vite-plugin-pwa
+### 2. Installer vite-plugin-pwa
 
 ```bash
 pnpm add -D vite-plugin-pwa
 ```
 
-### 3. Add the manifest in vite.config.js
+### 3.  Ajouter le manifest dans vite.config.js
 
 ```bash
 import { defineConfig } from 'vite';

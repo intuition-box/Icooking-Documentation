@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+# Vue d'ensemble
+
 ### But de l'application
 
 L’application fonctionne comme un moteur de recherche marmiton.
