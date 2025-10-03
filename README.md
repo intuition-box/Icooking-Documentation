@@ -1,6 +1,6 @@
 # Icooking Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website is the documentation of the ICooking project. An app where you can verbally communicate with an IA culinary assistant. This is a future web3 application, you can read more about it on the website here : [Icooking-doc](https://doc-icooking.intuition.box/)
 
 ## Installation
 
@@ -19,23 +19,8 @@ This command starts a local development server and opens up a browser window. Mo
 ## Build
 
 ```bash
-bun build
+bun run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
