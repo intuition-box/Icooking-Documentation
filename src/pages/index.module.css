@@ -21,3 +21,26 @@
   align-items: center;
   justify-content: center;
 }
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.heroText {
+  flex: 1;
+  text-align: left;
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+}
