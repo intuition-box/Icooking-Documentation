@@ -1,10 +1,10 @@
 {
   "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+    "message": "Suivant",
+    "description": "Le label pour la version courante"
   },
   "sidebar.tutorialSidebar.category.technology": {
-    "message": "technology",
-    "description": "The label for category technology in sidebar tutorialSidebar"
+    "message": "Technologie",
+    "description": "Libellé de la catégorie 'technologie' dans la sidebar tutorialSidebar"
   }
 }

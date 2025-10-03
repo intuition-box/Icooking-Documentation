@@ -1,14 +1,14 @@
 {
   "title": {
     "message": "ICooking Documentation",
-    "description": "The title in the navbar"
+    "description": "Le titre dans la barre de navigation"
   },
   "item.label.Docs": {
     "message": "Docs",
-    "description": "Navbar item with label Docs"
+    "description": "Élément de navbar avec le label Docs"
   },
   "item.label.GitHub": {
     "message": "GitHub",
-    "description": "Navbar item with label GitHub"
+    "description": "Élément de navbar avec le label GitHub"
   }
 }
